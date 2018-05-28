@@ -1,0 +1,19 @@
+.mp-choices-ripple {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,.35);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(0);
+    animation: mp-choices-ripple 0.42s cubic-bezier(0.250,0.460,0.450,0.940);
+
+    @keyframes mp-choices-ripple {
+        to {
+            transform: scale(8.6);
+            opacity: 0;
+        }
+    }
+}

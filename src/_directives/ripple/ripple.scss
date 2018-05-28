@@ -1,0 +1,44 @@
+.mp-ripple-container {
+    position: relative;
+    overflow: hidden;
+
+    .mp-ripple-waves {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: rgba(#000,.225);
+        border-radius: 100%;
+        transform: scale(0);
+        pointer-events: none;
+        animation: ripple .75s cubic-bezier(0.250,0.460,0.450,0.940);
+
+
+        @at-root .theme-dark & {
+            background: rgba(#fff,.125);
+        }
+
+        @at-root .ui-ripple-lg-#{&} {
+            background: rgba(#000,.3);
+            animation: ripple 0.75s cubic-bezier(0.250,0.460,0.450,0.940);
+
+            @at-root .theme-dark & {
+                background: rgba(#fff,.15);
+            }
+        }
+    }
+}
+
+
+@keyframes ripple {
+    to {
+        transform: scale(15.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-lg {
+    to {
+        transform: scale(40);
+        opacity: 0;
+    }
+}

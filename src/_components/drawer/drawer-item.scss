@@ -1,0 +1,131 @@
+@import "../../scss-dependencies/dependencies";
+
+.mp-drawer-item {
+    @at-root .mp-drawer-group & {
+
+        &:first-child {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+
+            .mp-drawer-expand {
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+
+            .mp-drawer-expand {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        &:last-child {
+            border-bottom-color: transparent;
+        }
+    }
+
+    .label {
+        position: relative;
+        padding-left: 16px;
+        padding-right: 64px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        cursor: pointer;
+        z-index: 20;
+
+        .arrow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 64px;
+            height: 100%;
+            text-align: center;
+
+            i {
+                height: 24px;
+                width: 24px;
+                line-height: 24px;
+            }
+        }
+    }
+
+
+    .mp-drawer-stretch {
+        height: 0;
+        transition: height 0.25s ease-out;
+        padding-left: 32px;
+        overflow: hidden;
+
+        .mp-drawer-stretch-content {
+            padding-bottom: 16px;
+        }
+    }
+
+    .mp-drawer-expand {
+        position: absolute;
+        right: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        transition: width 0.18s ease-in, left 0.25s ease-in,top 0.25s ease-out,border-radius 0.05s ease;
+        $height: 64px;
+        z-index: 102;
+
+        .mp-drawer-expand-header {
+            height: $height;
+            @include clearfix();
+            opacity: 0;
+            transition: opacity 0.45s ease;
+
+            .btn {
+                display: flex;
+                align-items: center;
+                float: left;
+                width: 48px;
+                padding-left: 16px;
+                height: 100%;
+            }
+
+            .name {
+                float: left;
+                padding-left: 16px;
+                line-height: $height;
+            }
+        }
+
+        .mp-drawer-expand-content {
+            height: calc(#{'100% - #{$height}'});
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        &.expanding {
+            border-radius: 0 !important;
+            transition: opacity 0.40s linear,width 0.18s ease-in, height 0.25s ease-out, top 0.25s ease-out,border-radius 0.18s ease 0.13s;
+        }
+
+        &.expanded {
+            .mp-drawer-expand-header {
+                transition: opacity 0.55s ease;
+                opacity: 1;
+            }
+
+            .mp-drawer-expand-content {
+                transition: opacity 0.55s ease;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@import "../../_theme/theme";
+
+$themes: light dark;
+$colors: #{'white'} primary secondary thirdly success warn error main main-deep main-pale accent accent-deep accent-pale;
+$backgrounds: panel component success warn error main main-deep main-pale accent accent-deep accent-pale selected-pale selected cloak #{'transparent'};
+$divide-positions: all top right bottom left;
+$divide-styles: solid dashed dotted;
+$levels: 1 2 3 4 5;
+
+//-----------------------------------
+@for $theme from 1 through length($themes) {
+    .theme-#{nth($themes,$theme)} {
+        @at-root body#{&} {
+            background-color: map-get($theme-map, "floor-#{nth($themes,$theme)}")
+        }
+
+        @for $color from 1 through length($colors) {
+            .mp-theme-color-#{nth($colors,$color)} {
+                color: map-get($theme-map, "#{nth($colors,$color)}-#{nth($themes,$theme)}");
+            }
+
+            .mp-theme-hover-color-#{nth($colors,$color)} {
+                transition: color .18s ease;
+
+                &:hover {
+                    transition: color .25s ease;
+                    color: map-get($theme-map, "#{nth($colors,$color)}-#{nth($themes,$theme)}");
+                }
+            }
+        }
+
+        @for $background from 1 through length($backgrounds) {
+            .mp-theme-background-#{nth($backgrounds,$background)} {
+                background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}");
+            }
+
+            .mp-theme-active-background-#{nth($backgrounds,$background)} {
+                &.active {
+                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}");
+                }
+            }
+
+            .mp-theme-hover-background-#{nth($backgrounds,$background)} {
+                transition: background-color .18s ease;
+
+                &:hover {
+                    transition: background-color .25s ease;
+                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}");
+                }
+            }
+        }
+
+        @for $divide-position from 1 through length($divide-positions) {
+            @for $divide-style from 1 through length($divide-styles) {
+                $position: nth($divide-positions,$divide-position);
+                $style: nth($divide-styles,$divide-style);
+
+                .mp-theme-divide-#{$position}-#{$style} {
+                    @if $position=='all' {
+                        border-width: 1px;
+                        border-style: $style;
+                        border-color: map-get($theme-map, "divide-#{nth($themes,$theme)}");
+                    }
+                    @else {
+                        border-#{$position}-width: 1px;
+                        border-#{$position}-style: $style;
+                        border-#{$position}-color: map-get($theme-map, "divide-#{nth($themes,$theme)}");
+                    }
+                }
+
+                .mp-theme-divide-#{$position}-#{$style}-not-last {
+                    &:not(:last-child) {
+                        @if $position=='all' {
+                            border-width: 1px;
+                            border-style: $style;
+                            border-color: map-get($theme-map, "divide-#{nth($themes,$theme)}");
+                        }
+                        @else {
+                            border-#{$position}-width: 1px;
+                            border-#{$position}-style: $style;
+                            border-#{$position}-color: map-get($theme-map, "divide-#{nth($themes,$theme)}");
+                        }
+                    }
+                }
+            }
+        }
+
+        @for $level from 1 to length($levels) {
+            .mp-theme-level-#{$level} {
+                box-shadow: map-get($theme-map, "level-#{nth($levels,$level)}-#{nth($themes,$theme)}");
+            }
+
+            .mp-theme-level-#{$level}-fliter {
+                filter: drop-shadow(map-get($theme-map, "level-#{nth($levels,$level)}-#{nth($themes,$theme)}"));
+            }
+
+            .mp-theme-hover-level-#{$level} {
+                &:hover {
+                    box-shadow: map-get($theme-map, "level-#{nth($levels,$level)}-#{nth($themes,$theme)}");
+                    transition: box-shadow 0.15s ease;
+                }
+            }
+
+            .mp-theme-hover-level-#{$level}-fliter {
+                transition: background-color .18s ease;
+
+                &:hover {
+                    filter: drop-shadow(map-get($theme-map, "level-#{nth($levels,$level)}-#{nth($themes,$theme)}"));
+                    transition: box-shadow 0.25s ease;
+                }
+            }
+        }
+    }
+}

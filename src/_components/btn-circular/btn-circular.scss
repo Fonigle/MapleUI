@@ -1,0 +1,64 @@
+.mp-btn-circular {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    z-index: 99;
+    cursor: pointer;
+    transition-property: left, right, top, bottom, transform, background-color;
+    will-change: left, right, top, bottom, transform, background-color;
+    transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.25s, 0.3s;
+    transition-delay: 0.25s, 0.25s, 0.25s, 0.25s, 0s, 0s;
+
+    i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 0.2s ease 0.2s;
+        width: 24px;
+        height: 24px;
+        color: #fff;
+    }
+
+
+    &.active {
+        transform: scale(50);
+        transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.5s, 0.5s;
+        transition-delay: 0s, 0s, 0s, 0s, 0.22s, 0.25s;
+
+        i {
+            opacity: 0;
+            transition-delay: 0;
+        }
+    }
+
+    &.top {
+        transition-timing-function: ease-out, ease-out, ease-in, ease-in, ease, ease;
+    }
+
+    &.bottom {
+        transition-timing-function: ease-in, ease-in, ease-out, ease-out, ease, ease;
+    }
+
+    &.top.active {
+        top: calc(#{'50% - 28px'}) !important;
+        transition-timing-function: ease-in, ease-in, ease-out, ease-out, ease, ease;
+    }
+
+    &.left.active {
+        left: calc(#{'50% - 28px'}) !important;
+    }
+
+    &.right.active {
+        right: calc(#{'50% - 28px'}) !important;
+    }
+
+    &.bottom.active {
+        bottom: calc(#{'50% - 28px'}) !important;
+        transition-timing-function: ease-out, ease-out, ease-in, ease-in, ease, ease;
+    }
+}

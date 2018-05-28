@@ -1,0 +1,31 @@
+﻿@import "../../_theme/theme";
+
+.mp-dtp {
+    position: relative;
+    width: 100%;
+
+    .mp-dtp-popout {
+        position: absolute;
+        top: 56px;
+        left: 16px;
+        padding: 8px 16px;
+        z-index: 9000;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            display: block;
+            top: -8px;
+            left: 48px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid map-get($theme-map,'component-light');
+
+            @at-root .theme-dark & {
+                border-bottom-color: map-get($theme-map,'component-dark');
+            }
+        }
+    }
+}

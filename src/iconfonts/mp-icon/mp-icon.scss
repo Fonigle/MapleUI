@@ -1,0 +1,35 @@
+﻿@font-face {
+    font-family: "maple-icon";
+    src:
+    url('mp-icon.woff') format('woff'), /*woff*/
+    url('mp-icon.ttf?t=1524621256424') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('mp-icon.svg?t=1524621256424#maple-icon') format('svg'); /* iOS 4.1- */
+}
+
+.mp-icon {
+    font-family: "maple-icon" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mp-icon-arrow-left:before {
+    content: "\e600";
+}
+
+.mp-icon-checkbox-blank:before {
+    content: "\e601";
+}
+
+.mp-icon-checkbox-marked:before {
+    content: "\e602";
+}
+
+.mp-icon-radiobox-blank:before {
+    content: "\e603";
+}
+
+.mp-icon-radiobox-marked:before {
+    content: "\e604";
+}

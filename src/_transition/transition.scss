@@ -1,0 +1,45 @@
+/////////从右向左滑动////////
+.mp-right-slip-enter-active {
+    transition: transform .24s ease;
+}
+
+.mp-right-slip-leave-active {
+    transition: transform .16s ease;
+}
+
+.mp-right-slip-enter,
+.mp-right-slip-leave-active {
+    transform: translateX(100%);
+}
+/////////延迟缓入////////
+.mp-fade-delay-enter-active {
+    transition: opacity 0.25s linear 0.4s;
+}
+
+.mp-fade-delay-leave-active {
+    transition: opacity 0.1s linear;
+}
+
+.mp-fade-delay-enter,
+.mp-fade-delay-leave-active {
+    opacity: 0
+}
+
+
+/////////下拉/////////
+.mp-slide-down-enter-active {
+    /*overflow: hidden;*/
+    transition: transform .24s ease;
+    transform-origin: center top;
+}
+
+.mp-slide-down-leave-active {
+    /*overflow: hidden;*/
+    transition: transform .16s ease;
+    transform-origin: center top;
+}
+
+.mp-slide-down-enter,
+.mp-slide-down-leave-active {
+    transform: scaleY(0);
+}

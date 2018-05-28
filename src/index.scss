@@ -1,0 +1,25 @@
+@import "_theme/theme";
+
+body {
+    margin: 0;
+    padding: 0;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+
+.mp-disabled {
+    opacity: $disabled-opacity !important;
+    cursor: not-allowed !important;
+
+    * {
+        cursor: not-allowed !important;
+    }
+}
+
+
+.mp-clearfix {
+    @include clearfix();
+}

@@ -1,0 +1,13 @@
+﻿
+.mp-tabs {
+    height: 100%;
+
+    .mp-tabs-contents {
+        height: calc(#{'100% - 40px'});
+
+        .mp-tabs-content-wrapper {
+            height: 100%;
+            transition: transform 0.25s ease;
+        }
+    }
+}

@@ -1,0 +1,206 @@
+@import "../../_theme/theme";
+
+.mp-input {
+    position: relative;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    transition: margin-bottom 0.25s linear;
+    line-height: 22px;
+
+    input,
+    p {
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background: none;
+        box-sizing: content-box;
+        outline: none !important;
+
+        &.edited,
+        &:focus {
+            & ~ label {
+                top: 0;
+                font-size: 13px;
+                line-height: 18px;
+            }
+        }
+
+        &:focus {
+            & ~ label {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                    background: map-get($theme-map,'accent-pale-light');
+
+                    @at-root .theme-dark & {
+                        background: map-get($theme-map,'accent-pale-dark');
+                    }
+                }
+            }
+
+            & ~ .tips {
+                height: 16px;
+            }
+        }
+
+        &[readonly] {
+            opacity: 0.65;
+        }
+    }
+
+    p {
+        transition: height 0.25s ease;
+        overflow: hidden;
+        outline: none !important;
+    }
+
+    select {
+        @extend input;
+
+        option {
+            font-size: 16px;
+        }
+
+        &:focus {
+            & ~ .help-block {
+                opacity: 0;
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        line-height: 22px;
+        text-align: left;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 2px;
+            width: 0;
+            transition: .2s ease all;
+            z-index: 5;
+        }
+    }
+
+    .tips {
+        position: absolute;
+        display: block;
+        height: 0;
+        font-size: 13px;
+        line-height: 16px;
+        overflow: hidden;
+        transition: height 0.15s ease;
+    }
+
+    .error-block {
+        position: absolute;
+        display: block;
+        margin: 2px 0 0;
+        opacity: 0;
+        font-size: 13px;
+        line-height: 16px;
+        left: 0px;
+        transition: left 0.25s ease, opacity 0.25s linear;
+    }
+
+    &.lg {
+        input {
+            font-size: 32px;
+            height: 48px;
+            line-height: 48px;
+        }
+
+        label {
+            font-size: 32px;
+            top: 24px;
+            line-height: 42px;
+        }
+    }
+
+    &.white {
+        input {
+            color: map-get($theme-map,'white-light');
+            border-bottom-color: map-get($theme-map,'divide-white-light');
+
+            @at-root .theme-dark & {
+                color: map-get($theme-map,'white-dark');
+                border-bottom-color: map-get($theme-map,'divide-white-dark');
+            }
+        }
+
+        label {
+            color: map-get($theme-map,'white-secondary-light');
+
+            @at-root .theme-dark & {
+                color: map-get($theme-map,'white-secondary-dark');
+            }
+
+            &::after {
+                left: 0;
+                width: 100%;
+                background: map-get($theme-map,'white-light');
+
+                @at-root .theme-dark & {
+                    background: map-get($theme-map,'white-dark');
+                }
+            }
+        }
+    }
+
+    &.centered {
+        input {
+            text-align: center;
+        }
+    }
+
+    &.topless {
+        padding-top: 0;
+    }
+
+    &.centered-input {
+        input {
+            text-align: center;
+        }
+    }
+
+    &.error {
+        margin-bottom: 32px;
+
+        input {
+            & ~ label {
+                top: 0;
+                font-size: 13px;
+                color: $md-color-red !important;
+
+                &::after {
+                    left: 0;
+                    width: 100%;
+                    background: $md-color-red;
+                }
+            }
+
+            & ~ .error-block {
+                left: 0;
+                color: $md-color-red;
+                opacity: 1
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+﻿.mp-scroller > .mp-scroller-dragger {
+    z-index: 5;
+    width: 8px;
+    right: 0;
+}
+
+.mp-scroller.mp-scroller-hidden > .mp-scroller-dragger {
+    visibility: hidden;
+}
+
+
+.mp-scroller > .mp-scroller-dragger > .mp-scroller-dragger-styler {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotate3d(0,0,0,0);
+    transform: rotate3d(0,0,0,0);
+    -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+    transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+    background-color: rgba(#000,.05);
+    margin: 5px 2px 5px 0;
+    border-radius: 20px;
+    height: calc(100% - 10px);
+    display: block;
+}
+
+.mp-scroller.mp-scroller-scrolling-phantom > .mp-scroller-dragger > .mp-scroller-dragger-styler {
+    background-color: rgba(#000,.3);
+}
+
+.mp-scroller > .mp-scroller-dragger:hover > .mp-scroller-dragger-styler {
+    background-color: rgba(#000,.5);
+    margin: 0px;
+    height: 100%;
+}
+
+.mp-scroller.mp-scroller-dragging > .mp-scroller-dragger > .mp-scroller-dragger-styler {
+    background-color: rgba(#000,.5);
+    margin: 0px;
+    height: 100%;
+}
+
+.mp-scroller.mp-scroller-dragging-phantom > .mp-scroller-dragger > .mp-scroller-dragger-styler {
+    background-color: rgba(#000,.5);
+}

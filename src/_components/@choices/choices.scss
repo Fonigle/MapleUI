@@ -1,0 +1,188 @@
+@import "../../_theme/theme";
+
+.mp-checkbox,
+.mp-radio,
+.mp-toggle {
+    width: 100%;
+    @include clearfix();
+
+    & > label {
+        float: left;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        cursor: pointer;
+        width: auto;
+
+        .tips {
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            padding-left: 4px;
+            padding-right: 16px;
+        }
+
+        .input-wapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            order: -1;
+
+            input {
+                display: none;
+
+                & ~ i {
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    text-align: center;
+
+                    &::before {
+                        @include mp-icon();
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: map-get($theme-map,'secondary-light');
+                        transition: color 0.08s linear;
+
+                        @at-root .theme-dark & {
+                            color: map-get($theme-map,'secondary-dark');
+                        }
+                    }
+                }
+            }
+
+            input:checked {
+                & ~ i {
+                    &::before {
+                        color: map-get($theme-map,'success-light');
+
+                        @at-root .theme-dark & {
+                            color: map-get($theme-map,'success-dark');
+                        }
+                    }
+
+                    &.reverse-color {
+                        &::before {
+                            color: map-get($theme-map,'error-light');
+
+                            @at-root .theme-dark & {
+                                color: map-get($theme-map,'error-dark');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.mp-choices-float {
+        float: left;
+        margin-right: 16px;
+        width: auto;
+    }
+}
+
+
+.mp-checkbox {
+    input {
+        & ~ i {
+            &::before {
+                content: '\e601';
+            }
+        }
+    }
+
+    input:checked {
+        & ~ i {
+            &::before {
+                content: '\e602';
+            }
+        }
+    }
+}
+
+.mp-radio {
+    input {
+        & ~ i {
+            &::before {
+                content: '\e603';
+            }
+        }
+    }
+
+    input:checked {
+        & ~ i {
+            &::before {
+                content: '\e604';
+            }
+        }
+    }
+}
+
+.mp-toggle {
+    input {
+        & ~ i {
+            position: relative;
+            height: 12px !important;
+            border-radius: 6px;
+            background: rgba(#000,0.5);
+            transition: background-color 0.08s linear;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                display: block;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: $md-color-grey-50;
+                box-shadow: map-get($theme-map,"level-1-light");
+                transition: left 0.12s ease,background-color 0.08s linear;
+
+                @at-root .theme-dark & {
+                    background: $md-color-grey-400;
+                    box-shadow: map-get($theme-map,"level-1-dark");
+                }
+            }
+        }
+    }
+
+    input:checked {
+        & ~ i {
+            background: rgba(map-get($theme-map,'success-light'),0.5);
+
+            &::before {
+                left: 10px;
+                background: map-get($theme-map,'success-light');
+            }
+
+            @at-root .theme-dark & {
+                background: rgba(map-get($theme-map,'success-dark'),0.5);
+
+                &::before {
+                    background: map-get($theme-map,"success-dark");
+                }
+            }
+
+            &.reverse-color {
+                background: rgba(map-get($theme-map,'error-light'),0.5);
+
+                &::before {
+                    background: map-get($theme-map,'error-light');
+                }
+
+                @at-root .theme-dark & {
+                    background: rgba(map-get($theme-map,'error-dark'),0.5);
+
+                    &::before {
+                        background: map-get($theme-map,"error-dark");
+                    }
+                }
+            }
+        }
+    }
+}
