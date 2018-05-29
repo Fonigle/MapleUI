@@ -63,4 +63,8 @@
             z-index: 10;
         }
     }
+
+    &.mp-disabled {
+        pointer-events: none;
+    }
 }

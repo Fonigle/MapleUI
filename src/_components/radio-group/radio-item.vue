@@ -1,20 +1,30 @@
 ﻿<template>
-    <label v-if="inGroup" class="mp-radio-item" :style="computedStyle" v-ripple>
+    <label v-if="inGroup" :class="['mp-radio-item',{'mp-disabled':isDisabled}]" :style="computedStyle" v-ripple>
         <span ref="tips" class="tips" v-theme:color><slot></slot></span>
-        <input type="radio" :value="value" :name="parentName" v-model="currentValue" />
+        <input type="radio" :value="value" :name="parentName" v-model="currentValue" :disabled="isReadonly||isDisabled" />
         <i></i>
     </label>
 </template>
 <script>
     const vcomp = {
         identifier: 'mpRadioItem',
-        props: ['value'],
+        props: ['value', 'readonly', 'disabled'],
         data()
         {
             return {
             };
         },
         computed: {
+            isReadonly()
+            {
+                if (this.readonly || this.readonly === '') return true;
+                else return false;
+            },
+            isDisabled()
+            {
+                if (this.disabled || this.disabled === '') return true;
+                else return false;
+            },
             inGroup()
             {
                 return this.$parent.$options.identifier === 'mpRadioGroup'

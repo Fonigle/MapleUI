@@ -3,7 +3,7 @@
         <mp-input :bindValue="singleDisply" @click="showPopout" readonly><slot></slot></mp-input>
         <transition name="mp-slide-down">
             <div v-if="popoutShow" class="mp-datetime-picker-popout" v-theme:background v-theme:level="3" v-click-outside="hidePopout">
-                <dtp-selector v-model="singleTime" :format="format" :min="minValue" :max="maxValue"></dtp-selector>
+                <dtp-selector v-model="singleTime" :format="format || 'YYYY/MM/DD HH:mm:ss'" :min="minValue" :max="maxValue"></dtp-selector>
             </div>
         </transition>
     </div>
@@ -11,9 +11,9 @@
         <mp-input :bindValue="rangeDisply" @click="showPopout" readonly><slot></slot></mp-input>
         <transition name="mp-slide-down">
             <div v-if="popoutShow" class="mp-datetime-picker-popout" v-theme:background v-theme:level="3" v-click-outside="hidePopout">
-                <dtp-selector v-model="startTime" :format="format" :min="minValue" :max="currentValue[1]"></dtp-selector>
+                <dtp-selector v-model="startTime" :format="format || 'YYYY/MM/DD HH:mm:ss'" :min="minValue" :max="currentValue[1]"></dtp-selector>
                 <span class="diliver" v-theme:color="2">~</span>
-                <dtp-selector v-model="endTime" :format="format" :min="currentValue[0]" :max="maxValue"></dtp-selector>
+                <dtp-selector v-model="endTime" :format="format || 'YYYY/MM/DD HH:mm:ss'" :min="currentValue[0]" :max="maxValue"></dtp-selector>
             </div>
         </transition>
     </div>
@@ -58,12 +58,22 @@
             {
                 const date = new Date(this.singleTime);
 
-                return $maple.dateFormat(date, this.format || 'yyyy/MM/dd hh:mm:ss');
+                if (isNaN(date))
+                {
+                    return '----/--/-- --:--:--';
+                }
+                else
+                {
+                    return $maple.dateFormat(date, this.format || 'yyyy/MM/dd hh:mm:ss');
+                }
             },
             singleTime: {
                 get()
                 {
-                    return this.currentValue.getTime();
+                    if (this.currentValue.getTime)
+                    {
+                        return this.currentValue.getTime();
+                    }
                 },
                 set(val)
                 {
@@ -73,7 +83,10 @@
             startTime: {
                 get()
                 {
-                    return this.currentValue[0].getTime();
+                    if (this.currentValue[0].getTime)
+                    {
+                        return this.currentValue[0].getTime();
+                    }
                 },
                 set(val)
                 {
@@ -87,7 +100,10 @@
             endTime: {
                 get()
                 {
-                    return this.currentValue[1].getTime();
+                    if (this.currentValue[1].getTime)
+                    {
+                        return this.currentValue[1].getTime();
+                    }
                 },
                 set(val)
                 {
@@ -115,7 +131,7 @@
             {
                 const { isRange, currentValue, min, max } = this;
 
-                if (!isRange && !(currentValue instanceof Date))
+                if (!isRange && currentValue && !(currentValue instanceof Date))
                 {
                     $maple.errorLog('DatetimePicker', 'The v-model attr must be a Date Object');
                     this.onError = true;
@@ -123,12 +139,12 @@
 
                 if (isRange)
                 {
-                    if (!(currentValue instanceof Array))
+                    if (currentValue && !(currentValue instanceof Array))
                     {
                         $maple.errorLog('DatetimePicker', 'The v-model value must be a Array while in RANGE mode');
                         this.onError = true;
                     }
-                    else if ((!(currentValue[0] instanceof Date)) || (!(currentValue[1] instanceof Date)))
+                    else if ((currentValue[0] && !(currentValue[0] instanceof Date)) || (currentValue[1] && !(currentValue[1] instanceof Date)))
                     {
                         $maple.errorLog('DatetimePicker', 'The v-model value must contains two items both are Date Object');
                         this.onError = true;

@@ -45,7 +45,7 @@
                     item.width > maxWidth && (maxWidth = item.width);
                     item.height > maxHeight && (maxHeight = item.height);
                 }
-                return `width:${maxWidth + 48}px;height:${maxHeight + 32}px`;
+                return `width:${maxWidth}px;height:${maxHeight}px`;
             }
         },
         methods: {

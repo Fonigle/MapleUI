@@ -6,7 +6,7 @@ const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let ExtractTextPluginMain = new ExtractTextPlugin({
-    filename: process.env.NODE_ENV === 'production' ? "[name].css" : "[name].css",
+    filename: process.env.NODE_ENV === 'production' ? "[name].min.css" : "[name].css",
     allChunks: true
 });
 
