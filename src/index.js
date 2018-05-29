@@ -1,8 +1,8 @@
 import './index.scss';
 import './untils/untils';
-import './outputs/outputs';
+
 //mdi-iconfonts
-import './iconfonts/mp-icon/mp-icon.scss';
+import './_iconfonts/mp-icon/mp-icon.scss';
 
 //******Directives
 import Theme from './_directives/theme/theme';
@@ -27,7 +27,7 @@ import { mpScroller } from './_components/scroller/scroller';
 import { mpRadioGroup, mpRadioItem } from './_components/radio-group/radio-group';
 import { mpCheckboxGroup, mpCheckboxItem } from './_components/checkbox-group/checkbox-group';
 import { mpTile } from './_components/tile/tile';
-
+import { mpNumber } from './_components/number/number';
 
 //******Styles
 import './_transition/transition.scss';
@@ -80,6 +80,8 @@ const MapleUI = {
         Vue.component('mp-checkbox-item', mpCheckboxItem);
         //--Tile
         Vue.component('mp-tile', mpTile);
+        //--Number
+        Vue.component('mp-number', mpNumber);
     }
 }
 

@@ -1,6 +1,7 @@
-<template>
+﻿<template>
     <div :class="['mp-input',
-         {lg:isLarge,white:isWhite,centered:isCentered,topless:isTopless,error:errorMessage}]" @click="onClick()">
+         {lg:isLarge,white:isWhite,centered:isCentered,topless:isTopless,error:errorMessage}]"
+         @click="onClick()">
         <input ref="input"
                v-if="computedType==='text'||computedType==='password'"
                v-model="currentValue"
@@ -14,23 +15,13 @@
                @focus="onFocus($event)"
                v-theme:color
                v-theme:divide>
-        <p contenteditable
-           ref="p"
-           v-if="computedType==='textarea'"
-           :class="{edited:edited}"
-           @input="onInput($event)"
-           @blur="onBlur($event)"
-           @keydown.enter="onEnter()"
-           @focus="onFocus($event)"
-           v-theme:color
-           v-theme:divide />
         <label v-theme:color="2"><slot></slot></label>
         <span v-if="tips" class="tips" v-theme:color="3">{{tips}}</span>
         <span class="error-block">{{errorMessage}}</span>
     </div>
 </template>
 <script>
-    import TwoWay from '../../_mixins/two-way/two-way';
+    import TwoWay from 'two-way';
 
     const vcomp = {
         mixins: [TwoWay],
@@ -52,10 +43,6 @@
                         result = 'password';
                         break;
                     };
-                    case 'textarea': {
-                        result = 'textarea';
-                        break;
-                    }
                     default: break;
                 };
 
@@ -136,9 +123,11 @@
                 }
                 this.$emit('blur');
             },
-            onEnter()
+            onEnter(e,a)
             {
-
+                console.log(e);
+                console.log(a);
+                this.$emit('enter');
             },
             onFocus(event)
             {

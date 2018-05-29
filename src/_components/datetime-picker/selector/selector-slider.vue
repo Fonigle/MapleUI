@@ -68,7 +68,10 @@
                 const _this = this;
 
                 const mySwiper = _this.mySwiper;
-                _this.currentValue = mySwiper.slides[mySwiper.activeIndex].dataset.value;
+                if (mySwiper.slides[mySwiper.activeIndex])
+                {
+                    _this.currentValue = mySwiper.slides[mySwiper.activeIndex].dataset.value;
+                }
             },
             calcText(item)
             {

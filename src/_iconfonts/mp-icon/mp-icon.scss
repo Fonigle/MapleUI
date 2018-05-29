@@ -1,14 +1,13 @@
 ﻿@font-face {
     font-family: "maple-icon";
-    src:
-    url('mp-icon.woff') format('woff'), /*woff*/
+    src: url('mp-icon.woff') format('woff'), /*woff*/
     url('mp-icon.ttf?t=1524621256424') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
     url('mp-icon.svg?t=1524621256424#maple-icon') format('svg'); /* iOS 4.1- */
 }
 
 .mp-icon {
     font-family: "maple-icon" !important;
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -32,4 +31,12 @@
 
 .mp-icon-radiobox-marked:before {
     content: "\e604";
+}
+
+.mp-icon-minus:before {
+    content: "\e605";
+}
+
+.mp-icon-plus:before {
+    content: "\e606";
 }

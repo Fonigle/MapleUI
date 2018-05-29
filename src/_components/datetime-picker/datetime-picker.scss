@@ -4,12 +4,25 @@
     position: relative;
     width: 100%;
 
+    &.headless {
+        .mp-datetime-picker-popout {
+            top: 42px;
+        }
+    }
+
     .mp-datetime-picker-popout {
         position: absolute;
         top: 56px;
         left: 16px;
+        display: flex;
+        align-items: center;
         padding: 8px 16px;
         z-index: 9000;
+
+        .diliver {
+            padding-left: 4px;
+            padding-right: 6px;
+        }
 
         &::before {
             content: '';

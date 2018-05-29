@@ -36,7 +36,7 @@ $levels: 1 2 3 4 5;
 
             .mp-theme-active-background-#{nth($backgrounds,$background)} {
                 &.active {
-                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}");
+                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}") !important;
                 }
             }
 
@@ -45,7 +45,7 @@ $levels: 1 2 3 4 5;
 
                 &:hover {
                     transition: background-color .25s ease;
-                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}");
+                    background-color: map-get($theme-map, "#{nth($backgrounds,$background)}-#{nth($themes,$theme)}") !important;
                 }
             }
         }

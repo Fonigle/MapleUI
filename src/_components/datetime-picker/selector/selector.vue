@@ -16,7 +16,6 @@
 <script>
     import TwoWay from 'two-way';
     import selectorSlider from './selector-slider.vue';
-    import moment from 'moment';
 
     const vcomp = {
         mixins: [TwoWay],
@@ -58,7 +57,7 @@
             {
                 const result = [];
                 const min = this.min ? this.min.getFullYear() : 1970;
-                const max = this.min ? this.max.getFullYear() : 2050;
+                const max = this.max ? this.max.getFullYear() : 2050;
                 for (let i = min; i <= max; i++)
                 {
                     result.push(i)
@@ -135,7 +134,33 @@
             hourList()
             {
                 const result = [];
-                for (let i = 0; i <= 23; i++)
+                const { min, max, year, month, date } = this;
+                let minValue = 0, maxValue = 23;
+
+                if (min)
+                {
+                    const minYear = min.getFullYear();
+                    const minMonth = min.getMonth();
+                    const minDate = min.getDate();
+
+                    if (year == minYear && month == minMonth && date == minDate)
+                    {
+                        minValue = min.getHours();
+                    }
+                }
+
+                if (max)
+                {
+                    const maxYear = max.getFullYear();
+                    const maxMonth = max.getMonth();
+                    const maxDate = max.getDate();
+
+                    if (year == maxYear && month == maxMonth && date == maxDate)
+                    {
+                        maxValue = max.getHours();
+                    }
+                }
+                for (let i = minValue; i <= maxValue; i++)
                 {
                     result.push(i)
                 };
@@ -144,7 +169,37 @@
             minuteList()
             {
                 const result = [];
-                for (let i = 0; i <= 59; i++)
+                const { min, max, year, month, date, hour } = this;
+                let minValue = 0, maxValue = 59;
+
+                if (min)
+                {
+                    const minYear = min.getFullYear();
+                    const minMonth = min.getMonth();
+                    const minDate = min.getDate();
+                    const minHour = min.getHours();
+
+                    if (year == minYear && month == minMonth && date == minDate & hour == minHour)
+                    {
+                        minValue = min.getMinutes();
+                    }
+                }
+
+                if (max)
+                {
+                    const maxYear = max.getFullYear();
+                    const maxMonth = max.getMonth();
+                    const maxDate = max.getDate();
+                    const maxHour = max.getHours();
+
+
+                    if (year == maxYear && month == maxMonth && date == maxDate && hour == maxHour)
+                    {
+                        maxValue = max.getMinutes();
+                    }
+                }
+
+                for (let i = minValue; i <= maxValue; i++)
                 {
                     result.push(i)
                 };
@@ -153,7 +208,39 @@
             secondList()
             {
                 const result = [];
-                for (let i = 0; i <= 59; i++)
+                const { min, max, year, month, date, hour, minute } = this;
+                let minValue = 0, maxValue = 59;
+
+                if (min)
+                {
+                    const minYear = min.getFullYear();
+                    const minMonth = min.getMonth();
+                    const minDate = min.getDate();
+                    const minHour = min.getHours();
+                    const minMinute = min.getMinutes();
+
+                    if (year == minYear && month == minMonth && date == minDate && hour == minHour && minute == minMinute)
+                    {
+                        minValue = min.getSeconds();
+                    }
+                }
+
+                if (max)
+                {
+                    const maxYear = max.getFullYear();
+                    const maxMonth = max.getMonth();
+                    const maxDate = max.getDate();
+                    const maxHour = max.getHours();
+                    const maxMinute = max.getMinutes();
+
+                    if (year == maxYear && month == maxMonth && date == maxDate && hour == maxHour && minute == maxMinute)
+                    {
+
+                        maxValue = max.getSeconds();
+                    }
+                }
+
+                for (let i = minValue; i <= maxValue; i++)
                 {
                     result.push(i)
                 };
@@ -189,19 +276,45 @@
             setData()
             {
                 const timeString = $maple.dateFormat(this.currentTime, 'YYYY/MM/DD hh:mm:ss');
-                if (this.checkDate(timeString));
+
+                if (this.checkDate(timeString) && this.ValidateMin(this.currentTime) && this.ValidateMax(this.currentTime))
                 {
                     this.currentValue = this.currentTime.getTime();
                 }
             },
             checkDate(date)
             {
-                const m = date.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
-
+                const m = date.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})/);
                 if (m == null)
                     return false;
                 let d = new Date(m[1], m[3] - 1, m[4]);
                 return (d.getFullYear() == m[1] && (d.getMonth() + 1) == m[3] && d.getDate() == m[4]);
+            },
+            ValidateMin(time)
+            {
+                const { min } = this;
+                if (min)
+                {
+                    if (time >= min.getTime()) return true;
+                    else return false;
+                }
+                else
+                {
+                    return true;
+                }
+            },
+            ValidateMax(time)
+            {
+                const { max } = this;
+                if (max)
+                {
+                    if (time <= max.getTime()) return true;
+                    else return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         },
         mounted()
@@ -238,6 +351,10 @@
             {
                 this.currentTime.setSeconds(this.second);
                 this.setData();
+            },
+            currentValue()
+            {
+                this.calcData();
             }
         }
     }

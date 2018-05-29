@@ -23,3 +23,8 @@ body {
 .mp-clearfix {
     @include clearfix();
 }
+
+
+[class^="mp-"] {
+    @include disable-select();
+}

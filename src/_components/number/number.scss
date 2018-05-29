@@ -1,0 +1,36 @@
+.mp-number-picker {
+    display: flex;
+    align-items: center;
+
+    .btn-minus,
+    .btn-add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        outline: none !important;
+        border-style: solid;
+        background-color: transparent;
+        cursor: pointer;
+
+        &.disabled {
+            opacity: 0.62;
+            background-color: transparent !important;
+            cursor: default;
+        }
+    }
+
+    input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        width: 64px;
+        font-size: 20px;
+        outline: none !important;
+        text-align: center;
+        border-left-style: none;
+        border-right-style: none;
+        background: none;
+    }
+}

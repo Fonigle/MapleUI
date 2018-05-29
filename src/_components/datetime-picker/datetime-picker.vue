@@ -1,13 +1,21 @@
 ﻿<template>
-    <div v-if="!isRange" class="mp-datetime-picker">
-        <mp-input :bindValue="singleDisply" @click="inputClick" readonly :centered="centered"><slot></slot></mp-input>
+    <div v-if="!isRange" :class="['mp-datetime-picker',{headless:isHeadless}]">
+        <mp-input :bindValue="singleDisply" @click="showPopout" readonly><slot></slot></mp-input>
         <transition name="mp-slide-down">
-            <div v-if="popoutShow" class="mp-datetime-picker-popout" v-theme:background v-theme:level="3">
-                <dtp-selector v-model="singleTime" :format="format" :test="1" :min="minValue" :max="maxValue"></dtp-selector>
+            <div v-if="popoutShow" class="mp-datetime-picker-popout" v-theme:background v-theme:level="3" v-click-outside="hidePopout">
+                <dtp-selector v-model="singleTime" :format="format" :min="minValue" :max="maxValue"></dtp-selector>
             </div>
         </transition>
     </div>
-    <div v-else class="mp-datetime-picker mp-datetime-picker-range">
+    <div v-else :class="['mp-datetime-picker','mp-datetime-picker-range',{headless:isHeadless}]">
+        <mp-input :bindValue="rangeDisply" @click="showPopout" readonly><slot></slot></mp-input>
+        <transition name="mp-slide-down">
+            <div v-if="popoutShow" class="mp-datetime-picker-popout" v-theme:background v-theme:level="3" v-click-outside="hidePopout">
+                <dtp-selector v-model="startTime" :format="format" :min="minValue" :max="currentValue[1]"></dtp-selector>
+                <span class="diliver" v-theme:color="2">~</span>
+                <dtp-selector v-model="endTime" :format="format" :min="currentValue[0]" :max="maxValue"></dtp-selector>
+            </div>
+        </transition>
     </div>
 </template>
 <script>
@@ -29,26 +37,9 @@
             {
                 return $maple.singleDirectiveProp(this.range);
             },
-            singleDisply()
+            isHeadless()
             {
-                const date = new Date(this.singleTime);
-                //console.log($maple.dateFormat(date, this.format || 'yyyy/MM/dd hh:mm:ss'));
-
-                return $maple.dateFormat(date, this.format || 'yyyy/MM/dd hh:mm:ss');
-            },
-            startValue()
-            {
-                if (!this.onError)
-                {
-                    return this.currentValue[0];
-                }
-            },
-            endValue()
-            {
-                if (!this.onError)
-                {
-                    return this.currentValue[1];
-                }
+                return !(this.$slots.default);
             },
             minValue()
             {
@@ -62,6 +53,13 @@
                 if (!max || isNaN(new Date(max))) return '';
                 else return new Date(max);
             },
+
+            singleDisply()
+            {
+                const date = new Date(this.singleTime);
+
+                return $maple.dateFormat(date, this.format || 'yyyy/MM/dd hh:mm:ss');
+            },
             singleTime: {
                 get()
                 {
@@ -71,7 +69,43 @@
                 {
                     this.currentValue = new Date(val);
                 }
-            }
+            },
+            startTime: {
+                get()
+                {
+                    return this.currentValue[0].getTime();
+                },
+                set(val)
+                {
+
+                    let temp = $maple.deepClone(this.currentValue);
+
+                    temp[0] = new Date(val)
+                    this.currentValue = temp;
+                }
+            },
+            endTime: {
+                get()
+                {
+                    return this.currentValue[1].getTime();
+                },
+                set(val)
+                {
+                    let temp = $maple.deepClone(this.currentValue);
+
+                    temp[1] = new Date(val)
+                    this.currentValue = temp;
+                }
+            },
+            rangeDisply()
+            {
+                const start = new Date(this.startTime);
+                const end = new Date(this.endTime);
+                const startString = $maple.dateFormat(new Date(start), this.format || 'yyyy/MM/dd hh:mm:ss');
+                const endString = $maple.dateFormat(new Date(end), this.format || 'yyyy/MM/dd hh:mm:ss');
+
+                return `${startString} ~ ${endString}`
+            },
         },
         components: {
             DtpSelector
@@ -113,9 +147,13 @@
                     this.onError = true;
                 }
             },
-            inputClick()
+            showPopout()
             {
                 this.popoutShow = !this.popoutShow;
+            },
+            hidePopout()
+            {
+                this.popoutShow = false;
             }
         },
         mounted()
