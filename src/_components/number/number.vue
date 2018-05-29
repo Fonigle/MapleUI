@@ -3,7 +3,7 @@
         <button :class="['btn-minus',{disabled:minDisabled}]" @click="handleBtnMinusClick" v-theme:divide.all v-theme:background.hover="30">
             <i class="mp-icon mp-icon-minus" v-theme:color="2"></i>
         </button>
-        <input v-model="currentValue" @blur="handleInputBlur" v-theme:divide.top.bottom v-theme:color />
+        <input v-model="currentValue" @blur="handleInputBlur" @mousewheel="handleInputMousewheel" @DOMMouseScroll="handleInputDOMMouseScroll" v-theme:divide.top.bottom v-theme:color />
         <button :class="['btn-add',{disabled:maxDisabled}]" @click="handleBtnPlusClick" v-theme:divide.all v-theme:background.hover="30">
             <i class="mp-icon mp-icon-plus" v-theme:color="2"></i>
         </button>
@@ -62,7 +62,68 @@
                     if (currentValue > max) this.currentValue = max;
 
                 }
+            },
+            handleInputMousewheel($event)
+            {
+                const currentValue = parseInt(this.currentValue);
+                const min = parseInt(this.min);
+                const max = parseInt(this.max);
 
+                if ($event.deltaY < 0)
+                {
+                    if (!max)
+                    {
+                        this.currentValue++;
+                    }
+                    else if (currentValue < max)
+                    {
+                        this.currentValue++;
+                    }
+                }
+                else if ($event.deltaY > 0)
+                {
+
+
+                    if (!min)
+                    {
+                        this.currentValue--;
+                    }
+                    else if (currentValue > min)
+                    {
+                        this.currentValue--;
+                    }
+                }
+            },
+            handleInputDOMMouseScroll($event)
+            {
+                const currentValue = parseInt(this.currentValue);
+                const min = parseInt(this.min);
+                const max = parseInt(this.max);
+
+                if ($event.detail < 0)
+                {
+                    if (!max)
+                    {
+                        this.currentValue++;
+                    }
+                    else if (currentValue < max)
+                    {
+                        this.currentValue++;
+                    }
+                }
+                else if ($event.detail > 0)
+                {
+
+
+                    if (!min)
+                    {
+                        this.currentValue--;
+                    }
+                    else if (currentValue > min)
+                    {
+                        this.currentValue--;
+                    }
+                }
             }
         },
         mounted()

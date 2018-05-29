@@ -2318,6 +2318,46 @@ var vcomp = {
                 if (currentValue < min) this.currentValue = min;
                 if (currentValue > max) this.currentValue = max;
             }
+        },
+        handleInputMousewheel: function handleInputMousewheel($event) {
+            var currentValue = parseInt(this.currentValue);
+            var min = parseInt(this.min);
+            var max = parseInt(this.max);
+
+            if ($event.deltaY < 0) {
+                if (!max) {
+                    this.currentValue++;
+                } else if (currentValue < max) {
+                    this.currentValue++;
+                }
+            } else if ($event.deltaY > 0) {
+
+                if (!min) {
+                    this.currentValue--;
+                } else if (currentValue > min) {
+                    this.currentValue--;
+                }
+            }
+        },
+        handleInputDOMMouseScroll: function handleInputDOMMouseScroll($event) {
+            var currentValue = parseInt(this.currentValue);
+            var min = parseInt(this.min);
+            var max = parseInt(this.max);
+
+            if ($event.detail < 0) {
+                if (!max) {
+                    this.currentValue++;
+                } else if (currentValue < max) {
+                    this.currentValue++;
+                }
+            } else if ($event.detail > 0) {
+
+                if (!min) {
+                    this.currentValue--;
+                } else if (currentValue > min) {
+                    this.currentValue--;
+                }
+            }
         }
     },
     mounted: function mounted() {},
@@ -7697,6 +7737,8 @@ var render = function() {
       domProps: { value: _vm.currentValue },
       on: {
         blur: _vm.handleInputBlur,
+        mousewheel: _vm.handleInputMousewheel,
+        DOMMouseScroll: _vm.handleInputDOMMouseScroll,
         input: function($event) {
           if ($event.target.composing) {
             return
