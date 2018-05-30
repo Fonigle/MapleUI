@@ -2603,6 +2603,20 @@ button.swiper-pagination-bullet {
     border-right-style: none;
     background: none;
 }
+
+.mp-textarea[data-v-f94877c2] {
+  width: 100%;
+  height: 128px;
+}
+.mp-textarea p[data-v-f94877c2] {
+    width: 100%;
+    min-height: 100%;
+    background: none;
+    border: none;
+    resize: none;
+    outline: none;
+    margin: 0;
+}
 .mp-right-slip-enter-active {
   transition: transform .24s ease; }
 

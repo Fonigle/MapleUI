@@ -28,6 +28,7 @@ import { mpRadioGroup, mpRadioItem } from './_components/radio-group/radio-group
 import { mpCheckboxGroup, mpCheckboxItem } from './_components/checkbox-group/checkbox-group';
 import { mpTile } from './_components/tile/tile';
 import { mpNumber } from './_components/number/number';
+import { mpTextarea } from './_components/textarea/textarea';
 
 //******Styles
 import './_transition/transition.scss';
@@ -82,6 +83,8 @@ const MapleUI = {
         Vue.component('mp-tile', mpTile);
         //--Number
         Vue.component('mp-number', mpNumber);
+        //--Textarea
+        Vue.component('mp-textarea', mpTextarea);
     }
 }
 

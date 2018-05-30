@@ -3,7 +3,6 @@
          {lg:isLarge,white:isWhite,centered:isCentered,topless:isTopless,error:errorMessage}]"
          @click="onClick()">
         <input ref="input"
-               v-if="computedType==='text'||computedType==='password'"
                v-model="currentValue"
                :type="computedType"
                :class="{edited:edited}"
@@ -107,56 +106,23 @@
             },
             onInput(event)
             {
-                const el = event.target;
-                if (el.nodeName === 'P')
-                {
-                    this.currentValue = el.innerText;
-                };
                 this.errorMessage = '';
             },
             onBlur(event)
             {
-                const el = event.target;
-                if (el.nodeName === 'P')
-                {
-                    this.locked = false;
-                }
                 this.$emit('blur');
             },
-            onEnter(e,a)
+            onEnter(e, a)
             {
-                console.log(e);
-                console.log(a);
                 this.$emit('enter');
             },
             onFocus(event)
             {
-                const el = event.target;
-                if (el.nodeName === 'P')
-                {
-                    this.locked = true;
-                }
                 this.$emit('focus');
             },
             error(message)
             {
                 this.errorMessage = message;
-            }
-        },
-        mounted()
-        {
-            if (this.computedType === 'textarea')
-            {
-                !this.locked && (this.$refs.p.innerText = this.currentValue);
-            }
-        },
-        watch: {
-            bindValue()
-            {
-                if (this.computedType === 'textarea')
-                {
-                    !this.locked && (this.$refs.p.innerText = this.currentValue);
-                }
             }
         }
     }
