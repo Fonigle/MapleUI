@@ -2617,6 +2617,16 @@ button.swiper-pagination-bullet {
     outline: none;
     margin: 0;
 }
+
+.mp-button[data-v-35e77b1f] {
+  border-radius: 3px;
+  border: none;
+  outline: none !important;
+  padding: 8px 24px;
+  margin: 8px;
+  min-width: 96px;
+  cursor: pointer;
+}
 .mp-right-slip-enter-active {
   transition: transform .24s ease; }
 

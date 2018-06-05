@@ -114,7 +114,11 @@ const Theme = (el, binding) =>
                 level = 1;
             }
 
-            level && el.classList.add(`mp-theme-level-${level}`);
+
+            let hover = '';
+            Object.keys(modifiers).indexOf('hover') >= 0 && (hover = '-hover');
+
+            level && el.classList.add(`mp-theme${hover}-level-${level}`);
             break;
         };
         default: break;

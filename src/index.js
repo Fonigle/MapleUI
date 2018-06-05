@@ -29,6 +29,7 @@ import { mpCheckboxGroup, mpCheckboxItem } from './_components/checkbox-group/ch
 import { mpTile } from './_components/tile/tile';
 import { mpNumber } from './_components/number/number';
 import { mpTextarea } from './_components/textarea/textarea';
+import { mpButton } from './_components/button/button';
 
 //******Styles
 import './_transition/transition.scss';
@@ -85,6 +86,9 @@ const MapleUI = {
         Vue.component('mp-number', mpNumber);
         //--Textarea
         Vue.component('mp-textarea', mpTextarea);
+        //--Button
+        Vue.component('mp-button', mpButton);
+        Vue.component('mp-btn', mpButton);
     }
 }
 

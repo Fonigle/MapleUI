@@ -17,7 +17,7 @@
         <div ref="expandContent" v-else-if="computedType==='expand'" class="mp-drawer-expand" v-theme:background>
             <div class="mp-drawer-expand-header">
                 <div class="btn">
-                    <mp-btn-icon v-theme:color="2" @click="backClick">
+                    <mp-btn-icon v-theme:color="2" @click="destroy">
                         <i class="mdi mdi-arrow-left"></i>
                     </mp-btn-icon>
                 </div>
@@ -131,7 +131,7 @@
                     default: break;
                 }
             },
-            backClick()
+            destroy()
             {
                 const _this = this;
                 const ele_expandContent = this.$refs.expandContent;
