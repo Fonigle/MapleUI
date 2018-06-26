@@ -122,60 +122,6 @@ body.theme-light {
     transition: color .25s ease;
     color: #F44336; }
 
-.theme-light .mp-theme-color-main {
-  color: #03A9F4; }
-
-.theme-light .mp-theme-hover-color-main {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-main:hover {
-    transition: color .25s ease;
-    color: #03A9F4; }
-
-.theme-light .mp-theme-color-main-deep {
-  color: #0277BD; }
-
-.theme-light .mp-theme-hover-color-main-deep {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-main-deep:hover {
-    transition: color .25s ease;
-    color: #0277BD; }
-
-.theme-light .mp-theme-color-main-pale {
-  color: #B3E5FC; }
-
-.theme-light .mp-theme-hover-color-main-pale {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-main-pale:hover {
-    transition: color .25s ease;
-    color: #B3E5FC; }
-
-.theme-light .mp-theme-color-accent {
-  color: #FF9100; }
-
-.theme-light .mp-theme-hover-color-accent {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-accent:hover {
-    transition: color .25s ease;
-    color: #FF9100; }
-
-.theme-light .mp-theme-color-accent-deep {
-  color: #FF6D00; }
-
-.theme-light .mp-theme-hover-color-accent-deep {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-accent-deep:hover {
-    transition: color .25s ease;
-    color: #FF6D00; }
-
-.theme-light .mp-theme-color-accent-pale {
-  color: #FFD180; }
-
-.theme-light .mp-theme-hover-color-accent-pale {
-  transition: color .18s ease; }
-  .theme-light .mp-theme-hover-color-accent-pale:hover {
-    transition: color .25s ease;
-    color: #FFD180; }
-
 .theme-light .mp-theme-background-panel {
   background-color: #EEEEEE; }
 
@@ -235,78 +181,6 @@ body.theme-light {
   .theme-light .mp-theme-hover-background-error:hover {
     transition: background-color .25s ease;
     background-color: #F44336 !important; }
-
-.theme-light .mp-theme-background-main {
-  background-color: #03A9F4; }
-
-.theme-light .mp-theme-active-background-main.active {
-  background-color: #03A9F4 !important; }
-
-.theme-light .mp-theme-hover-background-main {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-main:hover {
-    transition: background-color .25s ease;
-    background-color: #03A9F4 !important; }
-
-.theme-light .mp-theme-background-main-deep {
-  background-color: #0277BD; }
-
-.theme-light .mp-theme-active-background-main-deep.active {
-  background-color: #0277BD !important; }
-
-.theme-light .mp-theme-hover-background-main-deep {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-main-deep:hover {
-    transition: background-color .25s ease;
-    background-color: #0277BD !important; }
-
-.theme-light .mp-theme-background-main-pale {
-  background-color: #B3E5FC; }
-
-.theme-light .mp-theme-active-background-main-pale.active {
-  background-color: #B3E5FC !important; }
-
-.theme-light .mp-theme-hover-background-main-pale {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-main-pale:hover {
-    transition: background-color .25s ease;
-    background-color: #B3E5FC !important; }
-
-.theme-light .mp-theme-background-accent {
-  background-color: #FF9100; }
-
-.theme-light .mp-theme-active-background-accent.active {
-  background-color: #FF9100 !important; }
-
-.theme-light .mp-theme-hover-background-accent {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-accent:hover {
-    transition: background-color .25s ease;
-    background-color: #FF9100 !important; }
-
-.theme-light .mp-theme-background-accent-deep {
-  background-color: #FF6D00; }
-
-.theme-light .mp-theme-active-background-accent-deep.active {
-  background-color: #FF6D00 !important; }
-
-.theme-light .mp-theme-hover-background-accent-deep {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-accent-deep:hover {
-    transition: background-color .25s ease;
-    background-color: #FF6D00 !important; }
-
-.theme-light .mp-theme-background-accent-pale {
-  background-color: #FFD180; }
-
-.theme-light .mp-theme-active-background-accent-pale.active {
-  background-color: #FFD180 !important; }
-
-.theme-light .mp-theme-hover-background-accent-pale {
-  transition: background-color .18s ease; }
-  .theme-light .mp-theme-hover-background-accent-pale:hover {
-    transition: background-color .25s ease;
-    background-color: #FFD180 !important; }
 
 .theme-light .mp-theme-background-selected-pale {
   background-color: rgba(0, 0, 0, 0.08); }
@@ -601,13 +475,13 @@ body.theme-dark {
     color: rgba(255, 255, 255, 0.7); }
 
 .theme-dark .mp-theme-color-thirdly {
-  color: rgba(0, 0, 0, 0.3); }
+  color: rgba(255, 255, 255, 0.3); }
 
 .theme-dark .mp-theme-hover-color-thirdly {
   transition: color .18s ease; }
   .theme-dark .mp-theme-hover-color-thirdly:hover {
     transition: color .25s ease;
-    color: rgba(0, 0, 0, 0.3); }
+    color: rgba(255, 255, 255, 0.3); }
 
 .theme-dark .mp-theme-color-success {
   color: #3d8b40; }
@@ -635,60 +509,6 @@ body.theme-dark {
   .theme-dark .mp-theme-hover-color-error:hover {
     transition: color .25s ease;
     color: #ea1c0d; }
-
-.theme-dark .mp-theme-color-main {
-  color: #0286c2; }
-
-.theme-dark .mp-theme-hover-color-main {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-main:hover {
-    transition: color .25s ease;
-    color: #0286c2; }
-
-.theme-dark .mp-theme-color-main-deep {
-  color: #01578b; }
-
-.theme-dark .mp-theme-hover-color-main-deep {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-main-deep:hover {
-    transition: color .25s ease;
-    color: #01578b; }
-
-.theme-dark .mp-theme-color-main-pale {
-  color: #82d4fa; }
-
-.theme-dark .mp-theme-hover-color-main-pale {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-main-pale:hover {
-    transition: color .25s ease;
-    color: #82d4fa; }
-
-.theme-dark .mp-theme-color-accent {
-  color: #cc7400; }
-
-.theme-dark .mp-theme-hover-color-accent {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-accent:hover {
-    transition: color .25s ease;
-    color: #cc7400; }
-
-.theme-dark .mp-theme-color-accent-deep {
-  color: #cc5700; }
-
-.theme-dark .mp-theme-hover-color-accent-deep {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-accent-deep:hover {
-    transition: color .25s ease;
-    color: #cc5700; }
-
-.theme-dark .mp-theme-color-accent-pale {
-  color: #ffbf4d; }
-
-.theme-dark .mp-theme-hover-color-accent-pale {
-  transition: color .18s ease; }
-  .theme-dark .mp-theme-hover-color-accent-pale:hover {
-    transition: color .25s ease;
-    color: #ffbf4d; }
 
 .theme-dark .mp-theme-background-panel {
   background-color: #303030; }
@@ -749,78 +569,6 @@ body.theme-dark {
   .theme-dark .mp-theme-hover-background-error:hover {
     transition: background-color .25s ease;
     background-color: #ea1c0d !important; }
-
-.theme-dark .mp-theme-background-main {
-  background-color: #0286c2; }
-
-.theme-dark .mp-theme-active-background-main.active {
-  background-color: #0286c2 !important; }
-
-.theme-dark .mp-theme-hover-background-main {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-main:hover {
-    transition: background-color .25s ease;
-    background-color: #0286c2 !important; }
-
-.theme-dark .mp-theme-background-main-deep {
-  background-color: #01578b; }
-
-.theme-dark .mp-theme-active-background-main-deep.active {
-  background-color: #01578b !important; }
-
-.theme-dark .mp-theme-hover-background-main-deep {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-main-deep:hover {
-    transition: background-color .25s ease;
-    background-color: #01578b !important; }
-
-.theme-dark .mp-theme-background-main-pale {
-  background-color: #82d4fa; }
-
-.theme-dark .mp-theme-active-background-main-pale.active {
-  background-color: #82d4fa !important; }
-
-.theme-dark .mp-theme-hover-background-main-pale {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-main-pale:hover {
-    transition: background-color .25s ease;
-    background-color: #82d4fa !important; }
-
-.theme-dark .mp-theme-background-accent {
-  background-color: #cc7400; }
-
-.theme-dark .mp-theme-active-background-accent.active {
-  background-color: #cc7400 !important; }
-
-.theme-dark .mp-theme-hover-background-accent {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-accent:hover {
-    transition: background-color .25s ease;
-    background-color: #cc7400 !important; }
-
-.theme-dark .mp-theme-background-accent-deep {
-  background-color: #cc5700; }
-
-.theme-dark .mp-theme-active-background-accent-deep.active {
-  background-color: #cc5700 !important; }
-
-.theme-dark .mp-theme-hover-background-accent-deep {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-accent-deep:hover {
-    transition: background-color .25s ease;
-    background-color: #cc5700 !important; }
-
-.theme-dark .mp-theme-background-accent-pale {
-  background-color: #ffbf4d; }
-
-.theme-dark .mp-theme-active-background-accent-pale.active {
-  background-color: #ffbf4d !important; }
-
-.theme-dark .mp-theme-hover-background-accent-pale {
-  transition: background-color .18s ease; }
-  .theme-dark .mp-theme-hover-background-accent-pale:hover {
-    transition: background-color .25s ease;
-    background-color: #ffbf4d !important; }
 
 .theme-dark .mp-theme-background-selected-pale {
   background-color: rgba(255, 255, 255, 0.08); }
@@ -1083,6 +831,510 @@ body.theme-dark {
   .theme-dark .mp-theme-hover-level-4-fliter:hover {
     filter: drop-shadow(0px 1px 12px rgba(0, 0, 0, 0.56));
     transition: box-shadow 0.25s ease; }
+
+.theme-light.color-light-blue .mp-theme-color-main {
+  color: #03A9F4; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-main {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-main:hover {
+    transition: color .25s ease;
+    color: #03A9F4 !important; }
+
+.theme-light.color-light-blue .mp-theme-color-main-deep {
+  color: #0277BD; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-main-deep {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-main-deep:hover {
+    transition: color .25s ease;
+    color: #0277BD !important; }
+
+.theme-light.color-light-blue .mp-theme-color-main-pale {
+  color: #81D4FA; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-main-pale {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-main-pale:hover {
+    transition: color .25s ease;
+    color: #81D4FA !important; }
+
+.theme-light.color-light-blue .mp-theme-color-accent {
+  color: #FF3D00; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-accent {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-accent:hover {
+    transition: color .25s ease;
+    color: #FF3D00 !important; }
+
+.theme-light.color-light-blue .mp-theme-color-accent-deep {
+  color: #DD2C00; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-accent-deep {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-accent-deep:hover {
+    transition: color .25s ease;
+    color: #DD2C00 !important; }
+
+.theme-light.color-light-blue .mp-theme-color-accent-pale {
+  color: #FF6E40; }
+
+.theme-light.color-light-blue .mp-theme-hover-color-accent-pale {
+  transition: color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-color-accent-pale:hover {
+    transition: color .25s ease;
+    color: #FF6E40 !important; }
+
+.theme-light.color-light-blue .mp-theme-background-main {
+  background-color: #03A9F4; }
+
+.theme-light.color-light-blue .mp-theme-active-background-main.active {
+  background-color: #03A9F4 !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-main {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-main:hover {
+    transition: background-color .25s ease;
+    background-color: #03A9F4 !important; }
+
+.theme-light.color-light-blue .mp-theme-background-main-deep {
+  background-color: #0277BD; }
+
+.theme-light.color-light-blue .mp-theme-active-background-main-deep.active {
+  background-color: #0277BD !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-main-deep {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-main-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #0277BD !important; }
+
+.theme-light.color-light-blue .mp-theme-background-main-pale {
+  background-color: #81D4FA; }
+
+.theme-light.color-light-blue .mp-theme-active-background-main-pale.active {
+  background-color: #81D4FA !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-main-pale {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-main-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #81D4FA !important; }
+
+.theme-light.color-light-blue .mp-theme-background-accent {
+  background-color: #FF3D00; }
+
+.theme-light.color-light-blue .mp-theme-active-background-accent.active {
+  background-color: #FF3D00 !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-accent {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-accent:hover {
+    transition: background-color .25s ease;
+    background-color: #FF3D00 !important; }
+
+.theme-light.color-light-blue .mp-theme-background-accent-deep {
+  background-color: #DD2C00; }
+
+.theme-light.color-light-blue .mp-theme-active-background-accent-deep.active {
+  background-color: #DD2C00 !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-accent-deep {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-accent-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #DD2C00 !important; }
+
+.theme-light.color-light-blue .mp-theme-background-accent-pale {
+  background-color: #FF6E40; }
+
+.theme-light.color-light-blue .mp-theme-active-background-accent-pale.active {
+  background-color: #FF6E40 !important; }
+
+.theme-light.color-light-blue .mp-theme-hover-background-accent-pale {
+  transition: background-color .18s ease; }
+  .theme-light.color-light-blue .mp-theme-hover-background-accent-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #FF6E40 !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-main {
+  color: #673AB7; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-main {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-main:hover {
+    transition: color .25s ease;
+    color: #673AB7 !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-main-deep {
+  color: #4527A0; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-main-deep {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-main-deep:hover {
+    transition: color .25s ease;
+    color: #4527A0 !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-main-pale {
+  color: #B39DDB; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-main-pale {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-main-pale:hover {
+    transition: color .25s ease;
+    color: #B39DDB !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-accent {
+  color: #1DE9B6; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-accent {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-accent:hover {
+    transition: color .25s ease;
+    color: #1DE9B6 !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-accent-deep {
+  color: #00BFA5; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-accent-deep {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-accent-deep:hover {
+    transition: color .25s ease;
+    color: #00BFA5 !important; }
+
+.theme-light.color-deep-purple .mp-theme-color-accent-pale {
+  color: #64FFDA; }
+
+.theme-light.color-deep-purple .mp-theme-hover-color-accent-pale {
+  transition: color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-color-accent-pale:hover {
+    transition: color .25s ease;
+    color: #64FFDA !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-main {
+  background-color: #673AB7; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-main.active {
+  background-color: #673AB7 !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-main {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-main:hover {
+    transition: background-color .25s ease;
+    background-color: #673AB7 !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-main-deep {
+  background-color: #4527A0; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-main-deep.active {
+  background-color: #4527A0 !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-main-deep {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-main-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #4527A0 !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-main-pale {
+  background-color: #B39DDB; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-main-pale.active {
+  background-color: #B39DDB !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-main-pale {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-main-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #B39DDB !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-accent {
+  background-color: #1DE9B6; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-accent.active {
+  background-color: #1DE9B6 !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-accent {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-accent:hover {
+    transition: background-color .25s ease;
+    background-color: #1DE9B6 !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-accent-deep {
+  background-color: #00BFA5; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-accent-deep.active {
+  background-color: #00BFA5 !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-accent-deep {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-accent-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #00BFA5 !important; }
+
+.theme-light.color-deep-purple .mp-theme-background-accent-pale {
+  background-color: #64FFDA; }
+
+.theme-light.color-deep-purple .mp-theme-active-background-accent-pale.active {
+  background-color: #64FFDA !important; }
+
+.theme-light.color-deep-purple .mp-theme-hover-background-accent-pale {
+  transition: background-color .18s ease; }
+  .theme-light.color-deep-purple .mp-theme-hover-background-accent-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #64FFDA !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-main {
+  color: #0286c2; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-main {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-main:hover {
+    transition: color .25s ease;
+    color: #0286c2 !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-main-deep {
+  color: #01578b; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-main-deep {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-main-deep:hover {
+    transition: color .25s ease;
+    color: #01578b !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-main-pale {
+  color: #50c3f8; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-main-pale {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-main-pale:hover {
+    transition: color .25s ease;
+    color: #50c3f8 !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-accent {
+  color: #cc3100; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-accent {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-accent:hover {
+    transition: color .25s ease;
+    color: #cc3100 !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-accent-deep {
+  color: #aa2200; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-accent-deep {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-accent-deep:hover {
+    transition: color .25s ease;
+    color: #aa2200 !important; }
+
+.theme-dark.color-light-blue .mp-theme-color-accent-pale {
+  color: #ff470d; }
+
+.theme-dark.color-light-blue .mp-theme-hover-color-accent-pale {
+  transition: color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-color-accent-pale:hover {
+    transition: color .25s ease;
+    color: #ff470d !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-main {
+  background-color: #0286c2; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-main.active {
+  background-color: #0286c2 !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-main {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-main:hover {
+    transition: background-color .25s ease;
+    background-color: #0286c2 !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-main-deep {
+  background-color: #01578b; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-main-deep.active {
+  background-color: #01578b !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-main-deep {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-main-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #01578b !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-main-pale {
+  background-color: #50c3f8; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-main-pale.active {
+  background-color: #50c3f8 !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-main-pale {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-main-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #50c3f8 !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-accent {
+  background-color: #cc3100; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-accent.active {
+  background-color: #cc3100 !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-accent {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-accent:hover {
+    transition: background-color .25s ease;
+    background-color: #cc3100 !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-accent-deep {
+  background-color: #aa2200; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-accent-deep.active {
+  background-color: #aa2200 !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-accent-deep {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-accent-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #aa2200 !important; }
+
+.theme-dark.color-light-blue .mp-theme-background-accent-pale {
+  background-color: #ff470d; }
+
+.theme-dark.color-light-blue .mp-theme-active-background-accent-pale.active {
+  background-color: #ff470d !important; }
+
+.theme-dark.color-light-blue .mp-theme-hover-background-accent-pale {
+  transition: background-color .18s ease; }
+  .theme-dark.color-light-blue .mp-theme-hover-background-accent-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #ff470d !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-main {
+  color: #512e90; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-main {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-main:hover {
+    transition: color .25s ease;
+    color: #512e90 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-main-deep {
+  color: #331d77; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-main-deep {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-main-deep:hover {
+    transition: color .25s ease;
+    color: #331d77 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-main-pale {
+  color: #9678cd; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-main-pale {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-main-pale:hover {
+    transition: color .25s ease;
+    color: #9678cd !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-accent {
+  color: #13c095; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-accent {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-accent:hover {
+    transition: color .25s ease;
+    color: #13c095 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-accent-deep {
+  color: #008c79; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-accent-deep {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-accent-deep:hover {
+    transition: color .25s ease;
+    color: #008c79 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-color-accent-pale {
+  color: #31ffce; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-color-accent-pale {
+  transition: color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-color-accent-pale:hover {
+    transition: color .25s ease;
+    color: #31ffce !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-main {
+  background-color: #512e90; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-main.active {
+  background-color: #512e90 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-main {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-main:hover {
+    transition: background-color .25s ease;
+    background-color: #512e90 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-main-deep {
+  background-color: #331d77; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-main-deep.active {
+  background-color: #331d77 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-main-deep {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-main-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #331d77 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-main-pale {
+  background-color: #9678cd; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-main-pale.active {
+  background-color: #9678cd !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-main-pale {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-main-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #9678cd !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-accent {
+  background-color: #13c095; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-accent.active {
+  background-color: #13c095 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-accent {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-accent:hover {
+    transition: background-color .25s ease;
+    background-color: #13c095 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-accent-deep {
+  background-color: #008c79; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-accent-deep.active {
+  background-color: #008c79 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-accent-deep {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-accent-deep:hover {
+    transition: background-color .25s ease;
+    background-color: #008c79 !important; }
+
+.theme-dark.color-deep-purple .mp-theme-background-accent-pale {
+  background-color: #31ffce; }
+
+.theme-dark.color-deep-purple .mp-theme-active-background-accent-pale.active {
+  background-color: #31ffce !important; }
+
+.theme-dark.color-deep-purple .mp-theme-hover-background-accent-pale {
+  transition: background-color .18s ease; }
+  .theme-dark.color-deep-purple .mp-theme-hover-background-accent-pale:hover {
+    transition: background-color .25s ease;
+    background-color: #31ffce !important; }
 .mp-scroller > .mp-scroller-dragger {
   z-index: 5;
   width: 8px;
@@ -2636,6 +2888,36 @@ button.swiper-pagination-bullet {
 .mp-right-slip-enter,
 .mp-right-slip-leave-active {
   transform: translateX(100%); }
+
+.mp-left-slip-enter-active {
+  transition: transform .24s ease; }
+
+.mp-left-slip-leave-active {
+  transition: transform .16s ease; }
+
+.mp-left-slip-enter,
+.mp-left-slip-leave-active {
+  transform: translateX(-100%); }
+
+.mp-bottom-slip-enter-active {
+  transition: transform .24s ease; }
+
+.mp-bottom-slip-leave-active {
+  transition: transform .16s ease; }
+
+.mp-bottom-slip-enter,
+.mp-bottom-slip-leave-active {
+  transform: translateY(100%); }
+
+.mp-top-slip-enter-active {
+  transition: transform .24s ease; }
+
+.mp-top-slip-leave-active {
+  transition: transform .16s ease; }
+
+.mp-top-slip-enter,
+.mp-top-slip-leave-active {
+  transform: translateY(-100%); }
 
 .mp-fade-delay-enter-active {
   transition: opacity 0.25s linear 0.4s; }

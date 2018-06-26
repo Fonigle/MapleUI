@@ -456,7 +456,7 @@ var vcomp = {
                     break;
             }
         },
-        backClick: function backClick() {
+        destroy: function destroy() {
             var _this = this;
             var ele_expandContent = this.$refs.expandContent;
             var ele_label = this.$refs.label;
@@ -4349,30 +4349,6 @@ exports.default = {
      @param vnode vue编译生成的虚拟节点
      */
     bind: function bind(el, binding, vnode) {
-        //const documentHandler = function (e)
-        //{
-        //    if (!vnode.context || el.contains(e.target))
-        //    {
-        //        return false;
-        //    }
-        //    if (binding.expression)
-        //    {
-        //        vnode.context[el[clickoutsideContext].methodName](e)
-        //    } else
-        //    {
-        //        el[clickoutsideContext].bindingFn(e);
-        //    }
-        //}
-        //el[clickoutsideContext] = {
-        //    documentHandler,
-        //    methodName: binding.expression,
-        //    bindingFn: binding.value
-        //}
-        //setTimeout(() =>
-        //{
-        //    document.addEventListener('click', documentHandler);
-        //}, 0)
-
         var scrollerHandler = function scrollerHandler(e) {
             if (!vnode.context) {
                 return false;
@@ -4873,7 +4849,7 @@ var render = function() {
                               arg: "color"
                             }
                           ],
-                          on: { click: _vm.backClick }
+                          on: { click: _vm.destroy }
                         },
                         [_c("i", { staticClass: "mdi mdi-arrow-left" })]
                       )
