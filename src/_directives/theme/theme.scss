@@ -1,8 +1,8 @@
 @import "../../_theme/theme";
 
 $themes: light dark;
-$colors: #{'white'} primary secondary thirdly success warn error main main-deep main-pale accent accent-deep accent-pale;
-$backgrounds: panel component success warn error main main-deep main-pale accent accent-deep accent-pale selected-pale selected cloak #{'transparent'};
+$colors: #{'white'} primary secondary thirdly success warn error;
+$backgrounds: panel component success warn error selected-pale selected cloak #{'transparent'};
 $divide-positions: all top right bottom left;
 $divide-styles: solid dashed dotted;
 $levels: 1 2 3 4 5;
@@ -107,6 +107,55 @@ $levels: 1 2 3 4 5;
                 &:hover {
                     filter: drop-shadow(map-get($theme-map, "level-#{nth($levels,$level)}-#{nth($themes,$theme)}"));
                     transition: box-shadow 0.25s ease;
+                }
+            }
+        }
+    }
+}
+
+$skins: 'light-blue' 'deep-purple';
+$skined-colors: main main-deep main-pale accent accent-deep accent-pale;
+
+
+@for $theme from 1 through length($themes) {
+    .theme-#{nth($themes,$theme)} {
+        @for $skin from 1 through length($skins) {
+            &.color-#{nth($skins,$skin)} {
+
+                @for $color from 1 through length($skined-colors) {
+                    .mp-theme-color-#{nth($skined-colors,$color)} {
+                        color: map-get(map-get($color-map,"#{nth($skins,$skin)}"),"#{nth($skined-colors,$color)}-#{nth($themes,$theme)}");
+                    }
+
+                    .mp-theme-hover-color-#{nth($skined-colors,$color)} {
+                        transition: color .18s ease;
+
+                        &:hover {
+                            transition: color .25s ease;
+                            color: map-get(map-get($color-map,"#{nth($skins,$skin)}"),"#{nth($skined-colors,$color)}-#{nth($themes,$theme)}") !important;
+                        }
+                    }
+                }
+
+                @for $color from 1 through length($skined-colors) {
+                    .mp-theme-background-#{nth($skined-colors,$color)} {
+                        background-color: map-get(map-get($color-map,"#{nth($skins,$skin)}"),"#{nth($skined-colors,$color)}-#{nth($themes,$theme)}");
+                    }
+
+                    .mp-theme-active-background-#{nth($skined-colors,$color)} {
+                        &.active {
+                            background-color: map-get(map-get($color-map,"#{nth($skins,$skin)}"),"#{nth($skined-colors,$color)}-#{nth($themes,$theme)}") !important;
+                        }
+                    }
+
+                    .mp-theme-hover-background-#{nth($skined-colors,$color)} {
+                        transition: background-color .18s ease;
+
+                        &:hover {
+                            transition: background-color .25s ease;
+                            background-color: map-get(map-get($color-map,"#{nth($skins,$skin)}"),"#{nth($skined-colors,$color)}-#{nth($themes,$theme)}") !important;
+                        }
+                    }
                 }
             }
         }
