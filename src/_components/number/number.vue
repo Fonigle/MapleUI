@@ -1,10 +1,10 @@
 <template>
     <div class="mp-number-picker">
-        <button :class="['btn-minus',{disabled:minDisabled}]" @click="handleBtnMinusClick" v-theme:divide.all v-theme:background.hover="30">
+        <button :class="['btn-minus',{disabled:minDisabled}]" @click="handleBtnMinusClick" v-theme:background.hover="30">
             <i class="mp-icon mp-icon-minus" v-theme:color="2"></i>
         </button>
-        <input v-model="currentValue" @blur="handleInputBlur" @mousewheel="handleInputMousewheel" @DOMMouseScroll="handleInputDOMMouseScroll" v-theme:divide.top.bottom v-theme:color />
-        <button :class="['btn-add',{disabled:maxDisabled}]" @click="handleBtnPlusClick" v-theme:divide.all v-theme:background.hover="30">
+        <input v-model="currentValue" @blur="handleInputBlur" @mousewheel="handleInputMousewheel" @DOMMouseScroll="handleInputDOMMouseScroll" v-theme:color />
+        <button :class="['btn-add',{disabled:maxDisabled}]" @click="handleBtnPlusClick" v-theme:background.hover="30">
             <i class="mp-icon mp-icon-plus" v-theme:color="2"></i>
         </button>
     </div>
@@ -25,7 +25,7 @@
                 const currentValue = parseInt(this.currentValue);
                 const min = parseInt(this.min);
 
-                if (min && currentValue <= min) return true;
+                if ((min || min === 0) && currentValue <= min) return true;
                 else return false;
             },
             maxDisabled()
@@ -33,7 +33,7 @@
                 const currentValue = parseInt(this.currentValue);
                 const max = parseInt(this.max);
 
-                if (max && currentValue >= max) return true;
+                if ((max || max === 0) && currentValue >= max) return true;
                 else return false;
             },
         },
@@ -131,9 +131,13 @@
 
         },
         watch: {
-            currentValue()
+            min()
             {
-
+                if ((min || min === 0) && this.currentValue < min) this.currentValue = min;
+            },
+            max()
+            {
+                if ((max || max === 0) && this.currentValue < max) this.currentValue = max;
             }
         }
     }

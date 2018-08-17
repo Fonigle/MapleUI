@@ -85,8 +85,8 @@ $color-map: (
 /******/ main-dark: darken($md-color-light-blue,$darken-ratio), //
 /******/ main-pale-light: $md-color-light-blue-200, //
 /******/ main-pale-dark: darken($md-color-light-blue-200,$darken-ratio), //
-/******/ main-deep-light: $md-color-light-blue-700, //
-/******/ main-deep-dark: darken( $md-color-light-blue-700,$darken-ratio), //
+/******/ main-deep-light: $md-color-light-blue-800, //
+/******/ main-deep-dark: darken( $md-color-light-blue-800,$darken-ratio), //
 /******/ accent-light: $md-color-orange-a400, //
 /******/ accent-dark: darken($md-color-orange-a400,$darken-ratio), //
 /******/ accent-pale-light: $md-color-orange-a200, //
@@ -99,13 +99,27 @@ $color-map: (
 /******/ main-dark: darken($md-color-deep-purple,$darken-ratio), //
 /******/ main-pale-light: $md-color-deep-purple-200, //
 /******/ main-pale-dark: darken($md-color-deep-purple-200,$darken-ratio), //
-/******/ main-deep-light: $md-color-deep-purple-700, //
-/******/ main-deep-dark: darken( $md-color-deep-purple-700,$darken-ratio), //
+/******/ main-deep-light: $md-color-deep-purple-800, //
+/******/ main-deep-dark: darken( $md-color-deep-purple-800,$darken-ratio), //
 /******/ accent-light: $md-color-red-a400, //
 /******/ accent-dark: darken($md-color-red-a400,$darken-ratio), //
 /******/ accent-pale-light: $md-color-red-a200, //
 /******/ accent-pale-dark: darken($md-color-red-a200,$darken-ratio), //
 /******/ accent-deep-light: $md-color-red-a700, //
 /******/ accent-deep-dark: darken($md-color-red-a700,$darken-ratio), //
+/**/ ), //
+/**/ 'green':( //
+/******/ main-light: $md-color-green, //
+/******/ main-dark: darken($md-color-green,$darken-ratio), //
+/******/ main-pale-light: $md-color-green-200, //
+/******/ main-pale-dark: darken($md-color-green-200,$darken-ratio), //
+/******/ main-deep-light: $md-color-green-800, //
+/******/ main-deep-dark: darken( $md-color-green-800,$darken-ratio), //
+/******/ accent-light: $md-color-deep-orange-a400, //
+/******/ accent-dark: darken($md-color-deep-orange-a400,$darken-ratio), //
+/******/ accent-pale-light: $md-color-deep-orange-a200, //
+/******/ accent-pale-dark: darken($md-color-deep-orange-a200,$darken-ratio), //
+/******/ accent-deep-light: $md-color-deep-orange-a700, //
+/******/ accent-deep-dark: darken($md-color-deep-orange-a700,$darken-ratio), //
 /**/ ) //
 ) //

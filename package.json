@@ -1,6 +1,6 @@
 {
   "name": "maple-ui",
-  "version": "1.5.13",
+  "version": "1.5.20",
   "description": "MapleUI",
   "license": "MIT",
   "main": "dist/maple-ui.min.js",

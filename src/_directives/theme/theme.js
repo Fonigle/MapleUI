@@ -113,8 +113,6 @@ const Theme = (el, binding) =>
             {
                 level = 1;
             }
-
-
             let hover = '';
             Object.keys(modifiers).indexOf('hover') >= 0 && (hover = '-hover');
 

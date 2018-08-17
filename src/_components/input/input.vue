@@ -123,6 +123,14 @@
             error(message)
             {
                 this.errorMessage = message;
+            },
+            focus()
+            {
+                this.$refs.input.focus();
+            },
+            blur()
+            {
+                this.$refs.input.blur();
             }
         }
     }

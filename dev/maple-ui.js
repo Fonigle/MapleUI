@@ -2962,7 +2962,6 @@ var Theme = function Theme(el, binding) {
                                                 if (value === undefined) {
                                                             level = 1;
                                                 }
-
                                                 var _hover = '';
                                                 Object.keys(modifiers).indexOf('hover') >= 0 && (_hover = '-hover');
 

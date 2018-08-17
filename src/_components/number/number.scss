@@ -1,4 +1,5 @@
 .mp-number-picker {
+    height: 36px;
     display: flex;
     align-items: center;
 
@@ -7,11 +8,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 36px;
+        height: 100%;
         outline: none !important;
         border-style: solid;
         background-color: transparent;
         cursor: pointer;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e0e0e0;
+
+        @at-root .theme-dark & {
+            border-color: #595959;
+        }
 
         &.disabled {
             opacity: 0.62;
@@ -24,7 +32,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 36px;
+        height: 100%;
         width: 64px;
         font-size: 20px;
         outline: none !important;
@@ -32,5 +40,16 @@
         border-left-style: none;
         border-right-style: none;
         background: none;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #e0e0e0;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #e0e0e0;
+
+        @at-root .theme-dark & {
+            border-top-color: #595959;
+            border-bottom-color: #595959;
+        }
     }
 }
